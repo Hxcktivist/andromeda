@@ -75,9 +75,9 @@ do
         if isGroup then
             button.Icon:SetTexCoord(unpack(C.TEX_COORD))
         elseif isNP then
-            button.Icon:SetTexCoord(0.1, 0.9, 0.26, 0.74) -- precise texcoord for rectangular icons
+            button.Icon:SetTexCoord(0.1, 0.9, 0.3, 0.7) -- precise texcoord for rectangular icons
         else
-            button.Icon:SetTexCoord(0.1, 0.9, 0.22, 0.78) -- precise texcoord for rectangular icons
+            button.Icon:SetTexCoord(0.1, 0.9, 0.3, 0.7) -- precise texcoord for rectangular icons
         end
 
         -- hooksecurefunc(button, "SetSize", UNITFRAME.UpdateIconTexCoord)
@@ -134,7 +134,7 @@ do
         local style = element.__owner.unitStyle
         local isGroup = style == 'party' or style == 'raid'
         local isNP = style == 'nameplate'
-        button:SetSize(element.size, (isGroup and element.size) or (isNP and element.size * 0.6) or element.size * 0.7)
+        button:SetSize(element.size, (isGroup and element.size) or (isNP and element.size * 0.6) or element.size * 0.6)
 
         --[[ local squareness = .6
         element.icon_height = element.size * squareness

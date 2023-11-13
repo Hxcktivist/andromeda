@@ -576,29 +576,29 @@ function F.ToggleConsole(index)
 end
 
 local function MainMenu_OnShow(self)
-    -- _G.GameMenuButtonLogout:SetPoint('TOP', GUI.GameMenuButton, 'BOTTOM', 0, -14)
+    -- ==_G.GameMenuButtonLogout:SetPoint('TOP', GUI.GameMenuButton, 'BOTTOM', 0, -14)
     -- self:SetHeight(self:GetHeight() + GUI.GameMenuButton:GetHeight() + 15 + 20)
 
-    -- _G.GameMenuButtonStore:ClearAllPoints()
-    -- _G.GameMenuButtonStore:SetPoint('TOP', _G.GameMenuButtonHelp, 'BOTTOM', 0, -4)
+     _G.GameMenuButtonStore:ClearAllPoints()
+     _G.GameMenuButtonStore:SetPoint('TOP', _G.GameMenuButtonHelp, 'BOTTOM', 0, -4)
 
-    -- _G.GameMenuButtonWhatsNew:ClearAllPoints()
-    -- _G.GameMenuButtonWhatsNew:SetPoint('TOP', _G.GameMenuButtonStore, 'BOTTOM', 0, -4)
+     _G.GameMenuButtonWhatsNew:ClearAllPoints()
+     _G.GameMenuButtonWhatsNew:SetPoint('TOP', _G.GameMenuButtonStore, 'BOTTOM', 0, -4)
 
     -- _G.GameMenuButtonUIOptions:ClearAllPoints()
     -- _G.GameMenuButtonUIOptions:SetPoint('TOP', _G.GameMenuButtonOptions, 'BOTTOM', 0, -4)
 
-    -- _G.GameMenuButtonEditMode:ClearAllPoints()
-    -- _G.GameMenuButtonEditMode:SetPoint('TOP', _G.GameMenuButtonUIOptions, 'BOTTOM', 0, -4)
+    _G.GameMenuButtonEditMode:ClearAllPoints()
+    _G.GameMenuButtonEditMode:SetPoint('TOP', _G.GameMenuButtonSettings, 'BOTTOM', 0, -4)
 
-    -- _G.GameMenuButtonMacros:ClearAllPoints()
-    -- _G.GameMenuButtonMacros:SetPoint('TOP', _G.GameMenuButtonEditMode, 'BOTTOM', 0, -4)
+    _G.GameMenuButtonMacros:ClearAllPoints()
+    _G.GameMenuButtonMacros:SetPoint('TOP', _G.GameMenuButtonEditMode, 'BOTTOM', 0, -4)
 
-    -- _G.GameMenuButtonAddons:ClearAllPoints()
-    -- _G.GameMenuButtonAddons:SetPoint('TOP', _G.GameMenuButtonMacros, 'BOTTOM', 0, -4)
+    _G.GameMenuButtonAddons:ClearAllPoints()
+    _G.GameMenuButtonAddons:SetPoint('TOP', _G.GameMenuButtonMacros, 'BOTTOM', 0, -4)
 
-    -- _G.GameMenuButtonQuit:ClearAllPoints()
-    -- _G.GameMenuButtonQuit:SetPoint('TOP', _G.GameMenuButtonLogout, 'BOTTOM', 0, -4)
+    _G.GameMenuButtonQuit:ClearAllPoints()
+    _G.GameMenuButtonQuit:SetPoint('TOP', _G.GameMenuButtonLogout, 'BOTTOM', 0, -4)
 end
 
 local function Button_OnClick()
@@ -620,8 +620,8 @@ local function CreateGameMenuButton()
     --bu:SetScript('OnClick', Button_OnClick)
 
     GameMenuFrame:HookScript('OnShow', function(self)
-        GameMenuButtonLogout:SetPoint('TOP', bu, 'BOTTOM', 0, -21)
-        self:SetHeight(self:GetHeight() + bu:GetHeight() + 22)
+        GameMenuButtonLogout:SetPoint('TOP', bu, 'BOTTOM', 0, -14)
+        self:SetHeight(self:GetHeight() + bu:GetHeight() + 14)
     end)
 
     bu:SetScript('OnClick', function()

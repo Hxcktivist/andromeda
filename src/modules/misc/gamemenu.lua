@@ -88,20 +88,7 @@ local menuList = {
             ToggleAllBags()
         end,
     },
-    {
-        _G.BLIZZARD_STORE,
-        C.Assets.Textures.MenuBarStore,
-        function()
-            ToggleStoreUI()
-        end,
-    },
-    {
-        _G.GAMEMENU_SUPPORT,
-        C.Assets.Textures.MenuBarHelp,
-        function()
-            ToggleHelpFrame()
-        end,
-    },
+
 }
 
 local function CreateButtonTexture(icon, texture)

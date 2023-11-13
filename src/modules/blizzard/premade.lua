@@ -227,8 +227,8 @@ end
 function BLIZZARD:AddAutoAcceptButton()
     local bu = F.CreateCheckbox(searchPanel, true)
     bu:SetSize(20, 20)
-    bu:SetHitRectInsets(0, -130, 0, 0)
-    bu:SetPoint('RIGHT', searchPanel.RefreshButton, 'LEFT', -130, 0)
+    bu:SetHitRectInsets(0, -175, 0, 0)
+    bu:SetPoint('RIGHT', searchPanel.RefreshButton, 'TOP', -125, 16)
 
     local outline = _G.ANDROMEDA_ADB.FontOutline
     F.CreateFS(bu, C.Assets.Fonts.Regular, 12, outline or nil, _G.LFG_LIST_AUTO_ACCEPT, 'YELLOW', outline and 'NONE' or 'THICK', 'LEFT', 24, 0)

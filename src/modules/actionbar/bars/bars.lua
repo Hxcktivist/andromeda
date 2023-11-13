@@ -3,10 +3,7 @@ local ACTIONBAR = F:GetModule('ActionBar')
 local LAB = F.Libs.LibActionButton
 
 function ACTIONBAR:UpdateAllSize()
-    if not C.DB['Actionbar']['Enable'] then
-        return
-    end
-
+    if not C.DB['Actionbar']['Enable'] then return end
     ACTIONBAR:UpdateSize('Bar1')
     ACTIONBAR:UpdateSize('Bar2')
     ACTIONBAR:UpdateSize('Bar3')

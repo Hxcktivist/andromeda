@@ -1,7 +1,7 @@
 local F, C, L = unpack(select(2, ...))
 local INFOBAR = F:GetModule('InfoBar')
 
-local currShow = 2003 -- Dragon Isles Supplies 巨龙群岛补给
+local currShow = 2245 -- flightstones
 local currPvE = {
     ['Elemental Overflow'] = 2118, -- 元素涌流
     ['Storm Sigil'] = 2122, -- 风暴徽记
