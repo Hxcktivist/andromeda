@@ -623,7 +623,7 @@ do
                 self:SetShadowOffset(1, -1)
             elseif shadow == 'THICK' then
                 self:SetShadowColor(0, 0, 0, 1)
-                self:SetShadowOffset(1, -1)
+                self:SetShadowOffset(2, -2)
             elseif shadow == 'NONE' then
                 self:SetShadowColor(0, 0, 0, 0)
                 self:SetShadowOffset(0, 0)
@@ -648,7 +648,7 @@ do
                 self:SetShadowOffset(1, -1)
             elseif type == 'THICK' then
                 self:SetShadowColor(0, 0, 0, 1)
-                self:SetShadowOffset(1, -1)
+                self:SetShadowOffset(2, -2)
             end
         end
 
@@ -2464,7 +2464,9 @@ do
 
         function F:AffixesSetup()
             local list = self.AffixesContainer and self.AffixesContainer.Affixes or self.Affixes
-		    if not list then return end
+            if not list then
+                return
+            end
 
             for _, frame in ipairs(list) do
                 frame.Border:SetTexture(nil)
@@ -2640,6 +2642,7 @@ do
             self:SetWidth(width)
         end
     end
+    F.ReskinInput = F.ReskinEditbox -- Deprecated
 
     -- Handle color swatch
 

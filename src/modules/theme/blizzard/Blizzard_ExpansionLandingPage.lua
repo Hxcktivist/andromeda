@@ -46,9 +46,6 @@ C.Themes['Blizzard_AdventureMap'] = function()
                     self:ForEachFrame(skinFactionCategory)
                 end)
             end
-            if panel.ScrollFadeOverlay then
-                panel.ScrollFadeOverlay:SetAlpha(0)
-            end
 
             panel.styled = true
         end

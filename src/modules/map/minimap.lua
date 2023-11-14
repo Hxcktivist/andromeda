@@ -44,7 +44,6 @@ function MAP:RemoveBlizzStuff()
         'MiniMapChallengeMode',
         'GameTimeFrame',
         'MinimapCompassTexture',
-        'AddonCompartmentFrame',
     }
 
     for _, v in pairs(frames) do
@@ -395,16 +394,18 @@ function MAP:CreateQueueStatusButton()
     _G.QueueStatusFrame:ClearAllPoints()
     _G.QueueStatusFrame:SetPoint('BOTTOMRIGHT', Minimap, 'BOTTOMLEFT', -4, Minimap.halfDiff)
 
-    hooksecurefunc(_G.QueueStatusButton, 'SetPoint', function(button, _, _, _, x)
-        if x == -15 then
-            button:ClearAllPoints()
-            button:SetPoint('BOTTOMRIGHT', Minimap, 0, Minimap.halfDiff)
-        end
-    end)
+    if C.IS_NEW_PATCH_10_1 then
+        hooksecurefunc(_G.QueueStatusButton, 'SetPoint', function(button, _, _, _, x)
+            if x == -15 then
+                button:ClearAllPoints()
+                button:SetPoint('BOTTOMRIGHT', Minimap, 0, Minimap.halfDiff)
+            end
+        end)
+    end
 
     local queueIcon = Minimap:CreateTexture(nil, 'ARTWORK')
     queueIcon:SetPoint('CENTER', _G.QueueStatusButton)
-    queueIcon:SetSize(60, 60)
+    queueIcon:SetSize(50, 50)
     queueIcon:SetTexture('Interface\\Minimap\\Raid_Icon')
 
     local anim = queueIcon:CreateAnimationGroup()
@@ -610,13 +611,13 @@ local function OnMouseUp(self, btn)
         return
     end
 
-    if btn == 'MiddleButton' then
+    if btn == 'RightButton' then
         if InCombatLockdown() then
             _G.UIErrorsFrame:AddMessage(C.RED_COLOR .. _G.ERR_NOT_IN_COMBAT)
             return
         end
         EasyMenu(MAP.MenuList, F.EasyMenu, 'cursor', 0, 0, 'MENU', 3)
-    elseif btn == 'RightButton' then
+    elseif btn == 'MiddleButton' then
         ToggleDropDownMenu(1, nil, MAP.MinimapTracking, self, -100, 100)
     else
         _G.Minimap:OnClick()
